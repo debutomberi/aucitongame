@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
+    //ボタンでscene移動　※移動先のsceneは未制作※
+
     public void OnClickShopButton(){
         SceneManager.LoadScene("");
     }
