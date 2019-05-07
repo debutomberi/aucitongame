@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoneyUp : MonoBehaviour
 {
-    public int UpMoney; // 上げる金額
-    int playerMoney; // NPCのマネー
+    int UpMoney; // 上げる金額
+    public int playerMoney; // NPCのマネー
     public int UpperLimit = 1000; // 上げる金額上限
 
 
@@ -25,9 +25,11 @@ public class MoneyUp : MonoBehaviour
     private void Addition(){
 
         // 金額上限でなければ加算
-        if (UpMoney <= UpperLimit){
+        if (playerMoney > UpperLimit && playerMoney > 0){
 
             UpMoney += 100;
+            playerMoney -= 100;
+            Debug.Log(playerMoney);
 
         }
         
