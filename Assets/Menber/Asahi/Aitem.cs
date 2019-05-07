@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Aitem : MonoBehaviour
+public enum AitemType { 絵画,彫刻,骨董品 }
+
+[CreateAssetMenu(menuName ="Aitem/Aitemparamete",fileName = "Aitemparamete")]
+public class Aitem : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    [HeaderAttribute("アイテムの種類")]
+    public AitemType aitemType;
+
+    [SerializeField]
+    [HeaderAttribute("購入金額")]
+    public int purchasePrice =1000;
+
+    [SerializeField]
+    [HeaderAttribute("スタート時の金額")]
+    public int startPrice = 700;
+
 }
