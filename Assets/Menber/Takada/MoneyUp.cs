@@ -6,7 +6,8 @@ public class MoneyUp : MonoBehaviour
 {
     int UpMoney; // 上げる金額
     public int playerMoney; // NPCのマネー
-    public int UpperLimit = 1000; // 上げる金額上限
+    int UpperLimit = 0; // 上げられる表向きの金額上限
+    public int OneUpLimit; //一度に挙げられる金額の上限 
 
 
     // Start is called before the first frame update
@@ -25,11 +26,11 @@ public class MoneyUp : MonoBehaviour
     private void Addition(){
 
         // 金額上限でなければ加算
-        if (playerMoney > UpperLimit && playerMoney > 0){
+        if (UpperLimit < 1000 && playerMoney > 0){
 
-            UpMoney += 100;
+            UpperLimit += 100;
             playerMoney -= 100;
-            Debug.Log(playerMoney);
+            Debug.Log(transform.name + "残り金額" + playerMoney + "円です");
 
         }
         
