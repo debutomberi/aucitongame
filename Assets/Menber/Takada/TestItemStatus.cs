@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestItemStatus : MonoBehaviour
+public class testItemStatus : MonoBehaviour
 {
-    //テスト用のアイテムステータス
-
-    public static int ItemRate = 100; //初期の値段
+    public static int testItemRate = 100;
 
     // Start is called before the first frame update
     void Start()
