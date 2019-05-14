@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 680093185}
   - component: {fileID: 680093184}
   m_Layer: 5
-  m_Name: Image
+  m_Name: statusWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,7 +757,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 330.3, y: -70}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 260, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &689976372
 MonoBehaviour:
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975be78b89acdbd4f86fd3707b4aaa02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: {fileID: 680093182}
+  statusWindow: {fileID: 680093182}
   myMoney: {fileID: 776332690}
   product1: {fileID: 1954879339}
   product2: {fileID: 1708223182}
@@ -889,7 +889,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 30, y: -139.49998}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 260, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &750935303
 MonoBehaviour:
@@ -1677,7 +1677,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 330.30002, y: -134.8}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 260, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1708223182
 GameObject:
@@ -2130,7 +2130,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 30, y: -74.899994}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 260, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1845862306
 MonoBehaviour:
