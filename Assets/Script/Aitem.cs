@@ -5,6 +5,9 @@ public enum AitemType { 絵画,彫刻,骨董品 }
 [CreateAssetMenu(menuName ="Aitem/Aitemparamete",fileName = "Aitemparamete")]
 public class Aitem : ScriptableObject
 {
+    [SerializeField]
+    [HeaderAttribute("アイテム名")]
+    public string aitemName;
 
     [SerializeField]
     [HeaderAttribute("アイテムの種類")]
