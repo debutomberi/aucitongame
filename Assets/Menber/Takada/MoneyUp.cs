@@ -21,6 +21,8 @@ public class MoneyUp : MonoBehaviour
     //金額の上乗せ処理
     private void Addition(){
 
+        new WaitForSeconds(3.0f);
+
         // 手持ち金があり金額上限でなければ上乗せする
         if (UpperLimit <= 1000 && playerMoney >= 100){
       
