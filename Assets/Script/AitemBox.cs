@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AitemBox : SingletonMonoBehaviour<AitemBox>
 {
-    //仮の変数。後で消す。
+
     public int money = 1000000;
 
     Aitem[] aitems = new Aitem[4];
     [HideInInspector]
     public int nextAitem = 0;
+    
 
     public void Awake()
     {
@@ -34,6 +35,24 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
             aitems[i] = null;
         }
 
+    }
+
+    //アイテムの値段
+    public int AuctionStartprice(int auctionNumber)
+    {
+        return aitems[auctionNumber].startPrice;
+    }
+
+    //アイテムの種類
+    public AitemType AucitionAitemType(int auctionNumber)
+    {
+        return aitems[auctionNumber].aitemType;
+    }
+
+    //アイテムの名前
+    public string AutionAitemName(int auctionNumber)
+    {
+        return aitems[auctionNumber].aitemName;
     }
 
 }
