@@ -9,7 +9,7 @@ public class MoneyPlus : MonoBehaviour
     public List<GameObject> CPUs = new List<GameObject>(); //CPUを入れるList
     int UpMoney; // 上乗せする金額
     int UppedMoney; //どれだけ上がったか
-    public static int UpperLimit; // 上乗せできる表向きの合計金額上限
+    public int UpperLimit; // 上乗せできる表向きの合計金額上限
     int OneUpLimit = 10; //一度に上乗せできる金額の上限 
 
     [SerializeField]
@@ -19,7 +19,9 @@ public class MoneyPlus : MonoBehaviour
     
 
     AitemBox aitemBox;
-    public int _ItemRate;
+    public int _ItemRate; //商品の初期金額
+    AitemType _aitemType;
+    AitemType Favorite;　　//お気に入りの商品
     int _ItemCount = 0;
 
 
@@ -48,6 +50,7 @@ public class MoneyPlus : MonoBehaviour
     private void Addition()
     {
         _ItemRate = aitemBox.AuctionStartprice(_ItemCount);
+        _aitemType = aitemBox.AucitionAitemType(_ItemCount);
         UpperLimit = _ItemRate + 2000 + Random.Range(500, 2000);
 
         // 金額上限でなければ上乗せする
@@ -70,6 +73,11 @@ public class MoneyPlus : MonoBehaviour
                 }
              
             }
+
+        if(UppedMoney >= UpperLimit && Favorite == _aitemType)
+        {
+            UpperLimit += 2000;
+        }
 
 
     }
