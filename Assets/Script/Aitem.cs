@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public enum AitemType { 絵画,彫刻,骨董品 }
 
 [CreateAssetMenu(menuName ="Aitem/Aitemparamete",fileName = "Aitemparamete")]
 public class Aitem : ScriptableObject
 {
+
+    [SerializeField]
+    [HeaderAttribute("アイテムの画像")]
+    public　Sprite aitemImage;
     [SerializeField]
     [HeaderAttribute("アイテム名")]
     public string aitemName;
