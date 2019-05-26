@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5314264f759b2764baa2e13ae9a20b28, type: 3}
   m_Name: image2
   m_EditorClassIdentifier: 
-  aitemImage: {fileID: 0}
-  aitemName: 
+  aitemImage: {fileID: 21300000, guid: 39df3ac24ff2b14429910c8e9d409552, type: 3}
+  aitemName: "\u30C1\u30E7\u30E1\uFF1D\u30A4\u306E\u7D75"
   aitemType: 0
   purchasePrice: 1000
   startPrice: 700

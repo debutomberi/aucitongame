@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5314264f759b2764baa2e13ae9a20b28, type: 3}
-  m_Name: Aitemparamete
+  m_Name: Sculptur1
   m_EditorClassIdentifier: 
-  aitemImage: {fileID: 21300000, guid: 506e896dbfaea284b9c5193c01670854, type: 3}
-  aitemName: "\u30A8\u30B8\u30D7\u30C8\u4EEE\u9762"
-  aitemType: 2
+  aitemImage: {fileID: 21300000, guid: 7d02b9b329c591c45aa00bd70853c5c7, type: 3}
+  aitemName: "\u72F8\u306E\u7F6E\u7269"
+  aitemType: 1
   purchasePrice: 1000
   startPrice: 700

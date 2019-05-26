@@ -17,7 +17,7 @@ public class Purchase : MonoBehaviour
 
     private void Start()
     {
-        
+        SetUI();
     }
 
     void SetUI()
