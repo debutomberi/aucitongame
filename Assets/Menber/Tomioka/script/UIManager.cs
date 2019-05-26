@@ -33,10 +33,10 @@ public class UIManager : MonoBehaviour
     bool researchCustomer3 = false;
     bool researchCustomer4 = false;
 
-    /*
+    
     string customerName1 = "まれいたそ";
     string customerLike1 = "水素水";
-    */
+    
 
     int product = 100;
 
