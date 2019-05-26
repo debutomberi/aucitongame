@@ -33,8 +33,11 @@ public class UIManager : MonoBehaviour
     bool researchCustomer3 = false;
     bool researchCustomer4 = false;
 
+    /*
     string customerName1 = "まれいたそ";
     string customerLike1 = "水素水";
+    */
+
     int product = 100;
 
     void Start(){
@@ -48,7 +51,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("");
         Debug.Log("shop画面は出ないはずだよ");
     }
-
+    
     public void OnClickResearchButton(){
         SceneManager.LoadScene("");
         Debug.Log("research画面は出ないはずだよ");
@@ -95,7 +98,10 @@ public class UIManager : MonoBehaviour
         Text customer3_Text = customer3.GetComponent<Text>();
         Text customer4_Text = customer4.GetComponent<Text>();
 
+        Text myMoney_Text = myMoney.GetComponent<Text>();
 
+
+        //myMoney_Text = 
         product1_Text.text = customerLike1 + "(" + product + "円)";
         customer1_Text.text = customerName1 + "は" + customerLike1 + "が好きだ";
     }
