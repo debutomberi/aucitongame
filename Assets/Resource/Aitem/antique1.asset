@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5314264f759b2764baa2e13ae9a20b28, type: 3}
-  m_Name: Aitemparamete
+  m_Name: antique1
   m_EditorClassIdentifier: 
-  aitemImage: {fileID: 21300000, guid: 506e896dbfaea284b9c5193c01670854, type: 3}
-  aitemName: "\u30A8\u30B8\u30D7\u30C8\u4EEE\u9762"
+  aitemImage: {fileID: 21300000, guid: dc90a35e9e0796f45a73ada3342f6b1b, type: 3}
+  aitemName: "\u6B74\u53F2\u3042\u308B\u304A\u4EBA\u5F62"
   aitemType: 2
   purchasePrice: 1000
   startPrice: 700

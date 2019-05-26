@@ -1,12 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Purchase : MonoBehaviour
 {
     
     public Aitem setAitem;
-    
+
+    [SerializeField]
+    Image aitemimage;
+    [SerializeField]
+    Text paramText;
+    [SerializeField]
+    Text nameText;
+
+    private void Start()
+    {
+        SetUI();
+    }
+
+    void SetUI()
+    {
+        aitemimage.sprite = setAitem.aitemImage;
+        paramText.text = setAitem.aitemType+"/＄"+setAitem.startPrice+"スタート";
+        nameText.text = setAitem.aitemName + "/＄" + setAitem.purchasePrice;
+    }
+
     public void Buy()
     {
         if(setAitem == null) { return; }
