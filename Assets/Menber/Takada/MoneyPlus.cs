@@ -13,9 +13,9 @@ public class MoneyPlus : MonoBehaviour
     int OneUpLimit = 10; //一度に上乗せできる金額の上限 
 
     bool AuctionStart = true; //オークション開始のフラグ
+    bool plusFlag　= true;    //CPUが競りに参加しているかのフラグ
 
-
-    int cpuMoney; //CPUの所持金
+    int _cpuMoney; //CPUの所持金
 
     [SerializeField]
     private float Intaval;
@@ -26,7 +26,7 @@ public class MoneyPlus : MonoBehaviour
     AitemBox aitemBox;
     public int _ItemRate; //商品の初期金額
     AitemType _aitemType;
-    AitemType Favorite;　　//お気に入りの商品
+    AitemType cpuFavorite;　　//お気に入りの商品
     int _ItemCount = 0;
 
 
@@ -39,19 +39,26 @@ public class MoneyPlus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //競り開始時の商品の値段とアイテムタイプを設定
         if (AuctionStart)
         {
             for (Count = 0; Count != CPUs.Count; Count++)
             {
+                //_ItemRate = aitemBox.AuctionStartprice(_ItemCount);
+                //_aitemType = aitemBox.AucitionAitemType(_ItemCount);
+                //_cpuMoney = 
                 _ItemRate = 100;
                 UpperLimit = _ItemRate + 2000 + 10 * Random.Range(50, 200);
+                if(UpperLimit > _cpuMoney)
+                {
+                    UpperLimit = _cpuMoney;
+                }
                 Debug.Log(CPUs[Count].name + "の限界は" + UpperLimit);
             }
+
             AuctionStart = false;
         }
-
-
-        /*
+       
         //インターバル毎に行う処理
         tmpTime += Time.deltaTime;
             if (tmpTime >= Intaval)
@@ -60,21 +67,19 @@ public class MoneyPlus : MonoBehaviour
                 tmpTime = 0;
 
             }
-            */
+            
+            
     }
 
 
     //金額の上乗せ処理
     private void Addition()
     {
-        //_ItemRate = aitemBox.AuctionStartprice(_ItemCount);
-        //_aitemType = aitemBox.AucitionAitemType(_ItemCount);
-
 
         // 金額上限でなければ上乗せする
 
-        if (UppedMoney <= UpperLimit)
-            {
+        if (plusFlag && UppedMoney <= UpperLimit)
+        {
 
                 UpMoney = 10 * Random.Range(1, OneUpLimit + 1);
                 UppedMoney += UpMoney;
@@ -90,13 +95,16 @@ public class MoneyPlus : MonoBehaviour
                     Count = 0;
                 }
              
-            }
+        } else 
 
-        if(UppedMoney >= UpperLimit && Favorite == _aitemType)
+        if(plusFlag && UppedMoney >= UpperLimit && cpuFavorite == _aitemType)
         {
             UpperLimit += 2000;
+            Debug.Log(CPUs[Count].name + "の好きな部類の商品です");
         }
-
-
+        else
+        {
+            plusFlag = false;
+        }
     }
 }
