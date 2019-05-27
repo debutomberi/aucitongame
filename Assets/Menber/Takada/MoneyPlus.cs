@@ -12,6 +12,11 @@ public class MoneyPlus : MonoBehaviour
     public int UpperLimit; // 上乗せできる表向きの合計金額上限
     int OneUpLimit = 10; //一度に上乗せできる金額の上限 
 
+    bool AuctionStart = true; //オークション開始のフラグ
+
+
+    int cpuMoney; //CPUの所持金
+
     [SerializeField]
     private float Intaval;
     private float tmpTime = 0;
@@ -34,24 +39,37 @@ public class MoneyPlus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            //インターバル毎に行う処理
-            tmpTime += Time.deltaTime;
+        if (AuctionStart)
+        {
+            for (Count = 0; Count != CPUs.Count; Count++)
+            {
+                _ItemRate = 100;
+                UpperLimit = _ItemRate + 2000 + 10 * Random.Range(50, 200);
+                Debug.Log(CPUs[Count].name + "の限界は" + UpperLimit);
+            }
+            AuctionStart = false;
+        }
+
+
+        /*
+        //インターバル毎に行う処理
+        tmpTime += Time.deltaTime;
             if (tmpTime >= Intaval)
             {
                 Addition();
                 tmpTime = 0;
 
             }
-
+            */
     }
 
 
     //金額の上乗せ処理
     private void Addition()
     {
-        _ItemRate = aitemBox.AuctionStartprice(_ItemCount);
-        _aitemType = aitemBox.AucitionAitemType(_ItemCount);
-        UpperLimit = _ItemRate + 2000 + Random.Range(500, 2000);
+        //_ItemRate = aitemBox.AuctionStartprice(_ItemCount);
+        //_aitemType = aitemBox.AucitionAitemType(_ItemCount);
+
 
         // 金額上限でなければ上乗せする
 
@@ -62,7 +80,7 @@ public class MoneyPlus : MonoBehaviour
                 UppedMoney += UpMoney;
                 _ItemRate = _ItemRate + UppedMoney;
                 Debug.Log(UppedMoney);
-                Debug.Log(_ItemRate);
+                Debug.Log("現在の値段は" +_ItemRate +  "円です");
                 Debug.Log(CPUs[Count].name + "が掛け金を上乗せしました");
                 Count++;
                
