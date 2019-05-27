@@ -15,7 +15,7 @@ public class MoneyPlus : MonoBehaviour
     bool AuctionStart = true; //オークション開始のフラグ
     bool plusFlag　= true;    //CPUが競りに参加しているかのフラグ
 
-    int _cpuMoney; //CPUの所持金
+    public int _cpuMoney; //CPUの所持金
 
     [SerializeField]
     private float Intaval;
