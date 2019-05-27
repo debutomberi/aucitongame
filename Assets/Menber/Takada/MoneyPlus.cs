@@ -29,6 +29,8 @@ public class MoneyPlus : MonoBehaviour
     AitemType cpuFavorite;　　//お気に入りの商品
     int _ItemCount = 0;
 
+    public SucccesfulBid succcesfulBid;
+
 
     private void Start()
     {
@@ -44,8 +46,8 @@ public class MoneyPlus : MonoBehaviour
         {
             for (Count = 0; Count != CPUs.Count; Count++)
             {
-                //_ItemRate = aitemBox.AuctionStartprice(_ItemCount);
-                //_aitemType = aitemBox.AucitionAitemType(_ItemCount);
+                _ItemRate = aitemBox.AuctionStartprice(_ItemCount);
+                _aitemType = aitemBox.AucitionAitemType(_ItemCount);
                 //_cpuMoney = 
                 _ItemRate = 100;
                 UpperLimit = _ItemRate + 2000 + 10 * Random.Range(50, 200);
@@ -53,7 +55,7 @@ public class MoneyPlus : MonoBehaviour
                 {
                     UpperLimit = _cpuMoney;
                 }
-                Debug.Log(CPUs[Count].name + "の限界は" + UpperLimit);
+                //Debug.Log(CPUs[Count].name + "の限界は" + UpperLimit);
             }
 
             AuctionStart = false;
@@ -84,9 +86,9 @@ public class MoneyPlus : MonoBehaviour
                 UpMoney = 10 * Random.Range(1, OneUpLimit + 1);
                 UppedMoney += UpMoney;
                 _ItemRate = _ItemRate + UppedMoney;
-                Debug.Log(UppedMoney);
-                Debug.Log("現在の値段は" +_ItemRate +  "円です");
-                Debug.Log(CPUs[Count].name + "が掛け金を上乗せしました");
+                //Debug.Log(UppedMoney);
+                //Debug.Log("現在の値段は" +_ItemRate +  "円です");
+                //Debug.Log(CPUs[Count].name + "が掛け金を上乗せしました");
                 Count++;
                
            
@@ -106,5 +108,13 @@ public class MoneyPlus : MonoBehaviour
         {
             plusFlag = false;
         }
+
+        /*
+        if (plusFlag == false)
+        {
+            succcesfulBid.GetComponent<SucccesfulBid>().Succes();
+            AuctionStart = true;
+        }
+        */
     }
 }
