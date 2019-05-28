@@ -8,7 +8,7 @@ public struct User {
 
     public string userName;
     public AitemType likeAitem;
-    public int MoneyHeld;
+    public int moneyHeld;
 }
 
 public enum name {田中,小林,八九寺,豪炎寺,寺生まれ,ギーグ,円藤,万丈目,武藤,城乃内}
@@ -36,6 +36,7 @@ public class UserBox : SingletonMonoBehaviour<UserBox>
         
     }
 
+    //4人の客のステータスを生成
     public void UsersCreate()
     {
         for(int i=0;i < users.Length; i++)
@@ -43,10 +44,32 @@ public class UserBox : SingletonMonoBehaviour<UserBox>
             users[i] = UserCreate(i);
             Debug.Log("名前:" + users[i].userName +
                         "好みのアイテム:" + users[i].likeAitem.ToString() +
-                        "所持金:" + users[i].MoneyHeld
+                        "所持金:" + users[i].moneyHeld
                 );
         }
     }
+
+    //ユーザーの名前を参照
+    public string UserNameCheck(int userNum)
+    {
+        return users[userNum].userName;
+    }
+    //ユーザーの好みを参照
+    public AitemType UserLikeCheck(int userNum)
+    {
+        return users[userNum].likeAitem;
+    }
+    //ユーザーの所持金を参照
+    public int UserMoneyCheck(int userNum)
+    {
+        return users[userNum].moneyHeld;
+    }
+    //ユーザーの所持金を減らす
+    public void UserMoneyCut(int userNum,int CutVal)
+    {
+        users[userNum].moneyHeld =- CutVal;
+    }
+
 
     User UserCreate(int i){
         User user = new User();
@@ -77,7 +100,7 @@ public class UserBox : SingletonMonoBehaviour<UserBox>
                 OK = true;
             }
         }
-        user.MoneyHeld = 8000 + UnityEngine.Random.Range(0, 6001);
+        user.moneyHeld = 8000 + UnityEngine.Random.Range(0, 6001);
         return user;
     }
 
