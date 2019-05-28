@@ -18,6 +18,12 @@ public class OriginSceneManager : SingletonMonoBehaviour<OriginSceneManager>
     public void MenuScene()
     {
         SceneManager.LoadScene("menu");
+        if(SceneManager.GetActiveScene().name != "BuyAitem")
+        {
+            Debug.Log("ユーザー登録");
+            UserBox.Instance.UsersCreate();
+        }
+        
     }
 
     public void GoShop()
@@ -32,7 +38,7 @@ public class OriginSceneManager : SingletonMonoBehaviour<OriginSceneManager>
 
     public void CheckClear()
     {
-        if (AitemBox.Instance.money <= 1000) { SceneManager.LoadScene("GameOver"); }
+        if (AitemBox.Instance.money <= 2000) { SceneManager.LoadScene("GameOver"); }
         else if (AitemBox.Instance.money >= 20000) { SceneManager.LoadScene("Clear"); }
         else { SceneManager.LoadScene("menu"); }
 
