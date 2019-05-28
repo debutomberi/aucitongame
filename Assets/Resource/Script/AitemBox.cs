@@ -5,7 +5,7 @@ using UnityEngine;
 public class AitemBox : SingletonMonoBehaviour<AitemBox>
 {
 
-    public int money = 1000000;
+    public int money = 10000;
 
     Aitem[] aitems = new Aitem[4];
     [HideInInspector]

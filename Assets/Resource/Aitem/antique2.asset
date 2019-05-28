@@ -15,5 +15,5 @@ MonoBehaviour:
   aitemImage: {fileID: 21300000, guid: 506e896dbfaea284b9c5193c01670854, type: 3}
   aitemName: "\u30A8\u30B8\u30D7\u30C8\u4EEE\u9762"
   aitemType: 2
-  purchasePrice: 1000
-  startPrice: 700
+  purchasePrice: 2500
+  startPrice: 2000
