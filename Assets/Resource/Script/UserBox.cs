@@ -21,8 +21,7 @@ public class UserBox : SingletonMonoBehaviour<UserBox>
     // Start is called before the first frame update
     void Start()
     {
-
-        UsersCreate();
+        
     }
 
     private void Awake()
