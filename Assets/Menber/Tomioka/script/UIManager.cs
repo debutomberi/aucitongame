@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void OnClickStartAuctionButton(){
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Auction");
         Debug.Log("オークション画面は出ないはずだよ");
     }
 

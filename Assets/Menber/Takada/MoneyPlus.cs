@@ -9,8 +9,8 @@ public class MoneyPlus : MonoBehaviour
 
     AitemBox aitemBox;
     UserBox userBox;
-    SucccesfulBid succcesfulBid;
-    public OriginSceneManager originSceneManager;
+    public SucccesfulBid succcesfulBid;
+    OriginSceneManager originSceneManager;
 
     public List<GameObject> CPUs = new List<GameObject>(); //CPUを入れるList
     int UpMoney; // 上乗せする金額

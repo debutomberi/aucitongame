@@ -323,18 +323,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262797601}
   m_CullTransparentMesh: 0
---- !u!114 &498359349 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7954567951143388951, guid: 7bdaffd39e912da4a87eed916ae7cc1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094160955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a92b677e2854f4f94a044c4dca217b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &516648224
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +463,8 @@ GameObject:
   - component: {fileID: 584042443}
   - component: {fileID: 584042442}
   - component: {fileID: 584042444}
+  - component: {fileID: 584042445}
+  - component: {fileID: 584042446}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -494,13 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1796541efbb5d684eb8a4fc837cbac07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originSceneManager: {fileID: 498359349}
+  succcesfulBid: {fileID: 584042446}
   CPUs:
   - {fileID: 832881748}
   - {fileID: 1773288298}
   - {fileID: 2077180358}
   - {fileID: 1762689814}
-  UpperLimit: 0
   _cpuMoney: 0
   Intaval: 3
   _ItemRate: 0
@@ -534,6 +523,30 @@ MonoBehaviour:
   aaa: {fileID: 1634906504}
   count: 0
   moneyPlus: {fileID: 584042442}
+--- !u!114 &584042445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584042441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a92b677e2854f4f94a044c4dca217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &584042446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584042441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d5d2ed997ba3d44884af7c0e489558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671808726
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,8 +931,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371321290}
-  - component: {fileID: 1371321291}
-  - component: {fileID: 1371321292}
   m_Layer: 0
   m_Name: Item
   m_TagString: Art
@@ -941,32 +952,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1371321291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371321289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1211495a73946a54c80fc8dcd6e2a77b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1371321292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371321289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d4c27175d2b1e4cb4fc8f70afcc92c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 1000000
-  nextAitem: 0
 --- !u!1 &1520298380
 GameObject:
   m_ObjectHideFlags: 0
