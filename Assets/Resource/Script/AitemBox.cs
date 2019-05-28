@@ -14,7 +14,7 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
 
     public void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Buy(Aitem buyAitem)
@@ -34,7 +34,12 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
         {
             aitems[i] = null;
         }
+        nextAitem = 0;
+    }
 
+    public bool AucitonStart() {
+        if(aitems[0] == null) { return false; }
+        else { return true; }
     }
 
     //アイテムの値段

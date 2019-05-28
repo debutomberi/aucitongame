@@ -1513,7 +1513,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7954567951143388951, guid: 7bdaffd39e912da4a87eed916ae7cc1c,
+          type: 3}
         m_MethodName: MenuScene
         m_Mode: 1
         m_Arguments:

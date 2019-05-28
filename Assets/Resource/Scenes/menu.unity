@@ -1837,8 +1837,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 746267953}
-        m_MethodName: OnClickStartAuctionButton
+      - m_Target: {fileID: 7954567951143388951, guid: 7bdaffd39e912da4a87eed916ae7cc1c,
+          type: 3}
+        m_MethodName: GoAuction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1966,8 +1967,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 746267953}
-        m_MethodName: OnClickShopButton
+      - m_Target: {fileID: 7954567951143388951, guid: 7bdaffd39e912da4a87eed916ae7cc1c,
+          type: 3}
+        m_MethodName: GoShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

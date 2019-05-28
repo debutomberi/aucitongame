@@ -43,6 +43,7 @@ public class Purchase : MonoBehaviour
         AitemBox.Instance.Buy(setAitem);
         Debug.Log(setAitem.aitemName + "を購入しました");
         
+        
     }
 
 }
