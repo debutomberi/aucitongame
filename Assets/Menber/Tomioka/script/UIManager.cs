@@ -4,13 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
-{
+public class UIManager : MonoBehaviour{
 
     [SerializeField]
     private GameObject statusWindow;
     [SerializeField]
     private GameObject researchWindow;
+
+    [SerializeField]
+    private Text customer1;
+    [SerializeField]
+    private Text customer2;
+    [SerializeField]
+    private Text customer3;
+    [SerializeField]
+    private Text customer4;
+
+    [SerializeField]
+    private Text researchButton1;
+    [SerializeField]
+    private Text researchButton2;
+    [SerializeField]
+    private Text researchButton3;
+    [SerializeField]
+    private Text researchButton4;
+
 
     [SerializeField]
     private GameObject myMoney;
@@ -22,19 +40,14 @@ public class UIManager : MonoBehaviour
     private GameObject product3;
     [SerializeField]
     private GameObject product4;
-    [SerializeField]
-    private GameObject customer1;
-    [SerializeField]
-    private GameObject customer2;
-    [SerializeField]
-    private GameObject customer3;
-    [SerializeField]
-    private GameObject customer4;
 
-    bool researchCustomer1 = false;
-    bool researchCustomer2 = false;
-    bool researchCustomer3 = false;
-    bool researchCustomer4 = false;
+
+    private bool researchCustomer1 = false;
+    private bool researchCustomer2 = false;
+    private bool researchCustomer3 = false;
+    private bool researchCustomer4 = false;
+
+
 
     
     string customerName1 = "まれいたそ";
@@ -100,22 +113,76 @@ public class UIManager : MonoBehaviour
         researchWindow.SetActive(false);
     }
 
-    void ChangeText(){
-        Text product1_Text = product1.GetComponent<Text>();
-        Text product2_Text = product2.GetComponent<Text>();
-        Text product3_Text = product3.GetComponent<Text>();
-        Text product4_Text = product4.GetComponent<Text>();
 
-        Text customer1_Text = customer1.GetComponent<Text>();
-        Text customer2_Text = customer2.GetComponent<Text>();
-        Text customer3_Text = customer3.GetComponent<Text>();
-        Text customer4_Text = customer4.GetComponent<Text>();
+
+    public void OnClickResearButton1(){
+
+        if (researchCustomer1 == false){
+            researchCustomer1 = true;
+            
+            //所持金を減らす
+            AitemBox.Instance.money = -500;
+
+            researchButton1.text = "調査済み";
+        }
+        
+    }
+
+    public void OnClickResearButton2(){
+
+        if (researchCustomer2 == false){
+            researchCustomer2 = true;
+
+            //所持金を減らす
+            AitemBox.Instance.money = -500;
+
+            researchButton2.text = "調査済み";
+        }
+
+    }
+
+    public void OnClickResearButton3(){
+
+        if (researchCustomer3 == false){
+            researchCustomer3 = true;
+            
+            //所持金を減らす
+            AitemBox.Instance.money = -500;
+
+            researchButton3.text = "調査済み";
+        }
+
+    }
+
+    public void OnClickResearButton4(){
+
+        if (researchCustomer4 == false){
+            researchCustomer4 = true;
+            
+            //所持金を減らす
+            AitemBox.Instance.money = -500;
+
+            researchButton4.text = "調査済み";
+        }
+
+    }
+
+    void ChangeText(){
+        //Text product1_Text = product1.GetComponent<Text>();
+        //Text product2_Text = product2.GetComponent<Text>();
+        //Text product3_Text = product3.GetComponent<Text>();
+        //Text product4_Text = product4.GetComponent<Text>();
+
+        //Text customer1_Text = customer1.GetComponent<Text>();
+        //Text customer2_Text = customer2.GetComponent<Text>();
+        //Text customer3_Text = customer3.GetComponent<Text>();
+        //Text customer4_Text = customer4.GetComponent<Text>();
 
         Text myMoney_Text = myMoney.GetComponent<Text>();
 
         //myMoney_Text = 
-        product1_Text.text = customerLike1 + "(" + product + "円)";
-        customer1_Text.text = customerName1 + "は" + customerLike1 + "が好きだ";
+        //product1.text = customerLike1 + "(" + product + "円)";
+        customer1.text = customerName1 + "は" + customerLike1 + "が好きだ";
     }
 
 }
