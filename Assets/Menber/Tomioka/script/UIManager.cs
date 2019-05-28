@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject statusWindow;
     [SerializeField]
+    private GameObject researchWindow;
+
+    [SerializeField]
     private GameObject myMoney;
     [SerializeField]
     private GameObject product1;
@@ -42,25 +45,26 @@ public class UIManager : MonoBehaviour
 
     void Start(){
         statusWindow.SetActive(false);
+        researchWindow.SetActive(false);
         ChangeText();
     }
 
-    //ボタンでscene移動　※移動先のsceneは未制作※
+    ////ボタンでscene移動　※移動先のsceneは未制作※
 
-    public void OnClickShopButton(){
-        SceneManager.LoadScene("");
-        Debug.Log("shop画面は出ないはずだよ");
-    }
+    //public void OnClickShopButton(){
+    //    SceneManager.LoadScene("");
+    //    Debug.Log("shop画面は出ないはずだよ");
+    //}
     
-    public void OnClickResearchButton(){
-        SceneManager.LoadScene("");
-        Debug.Log("research画面は出ないはずだよ");
-    }
+    //public void OnClickResearchButton(){
+    //    SceneManager.LoadScene("");
+    //    Debug.Log("research画面は出ないはずだよ");
+    //}
 
-    public void OnClickStartAuctionButton(){
-        SceneManager.LoadScene("");
-        Debug.Log("オークション画面は出ないはずだよ");
-    }
+    //public void OnClickStartAuctionButton(){
+    //    SceneManager.LoadScene("");
+    //    Debug.Log("オークション画面は出ないはずだよ");
+    //}
 
     //ここまでsceneの移動
 
@@ -83,8 +87,17 @@ public class UIManager : MonoBehaviour
         statusWindow.SetActive(true);
     }
 
-    public void OnClickButton(){
+    public void OnClickStatusCancelButton(){
         statusWindow.SetActive(false);
+    }
+
+    public void OnClickCheckResearchButton()
+    {
+        researchWindow.SetActive(true);
+    }
+
+    public void OnClickResearchCancelButton(){
+        researchWindow.SetActive(false);
     }
 
     void ChangeText(){
@@ -99,7 +112,6 @@ public class UIManager : MonoBehaviour
         Text customer4_Text = customer4.GetComponent<Text>();
 
         Text myMoney_Text = myMoney.GetComponent<Text>();
-
 
         //myMoney_Text = 
         product1_Text.text = customerLike1 + "(" + product + "円)";
