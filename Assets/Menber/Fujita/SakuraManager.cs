@@ -56,12 +56,12 @@ public class SakuraManager : MonoBehaviour
         //bidcount = bidcount + count;
         moneyPlus._ItemRate = moneyPlus._ItemRate + count;
         //bidcount(合計金額の表示)
-        aaa.text = moneyPlus._ItemRate + "円";
+       // aaa.text = "現在の金額" + moneyPlus._ItemRate + "円";
     }
 
     public void UpdateLabel()
     {
-        label.text = count + "円";
-        aaa.text = moneyPlus._ItemRate + "円";
+        label.text = "入札する金額\n" + count + "円";
+        aaa.text = "現在の金額" + moneyPlus._ItemRate + "円";
     }
 }
