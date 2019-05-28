@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class non : MonoBehaviour
+public class testItemStatus : MonoBehaviour
 {
+    public static int testItemRate = 100;
+
     // Start is called before the first frame update
     void Start()
     {

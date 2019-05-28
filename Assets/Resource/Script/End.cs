@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class End : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,10 @@ public class test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            OriginSceneManager.Instance.TitleScene();
+        }
+
     }
 }
