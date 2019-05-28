@@ -10,12 +10,12 @@ public class MoneyPlus : MonoBehaviour
     AitemBox aitemBox;
     UserBox userBox;
     SucccesfulBid succcesfulBid;
-    OriginSceneManager originSceneManager;
+    public OriginSceneManager originSceneManager;
 
     public List<GameObject> CPUs = new List<GameObject>(); //CPUを入れるList
     int UpMoney; // 上乗せする金額
     int UppedMoney; //どれだけ上がったか
-    public int UpperLimit; // 上乗せできる表向きの合計金額上限
+    int UpperLimit; // 上乗せできる表向きの合計金額上限
     int OneUpLimit = 10; //一度に上乗せできる金額の上限 
 
     bool AuctionStart = true; //オークション開始のフラグ
@@ -48,13 +48,14 @@ public class MoneyPlus : MonoBehaviour
     {
         originSceneManager.CheckClear();
 
-        if (aitemBox != null)
+        if (aitemBox == null)
         {
             //競り開始時の商品の値段とアイテムタイプとユーザーの加算上限額を設定
             if (AuctionStart)
             {
                 _ItemRate = aitemBox.AuctionStartprice(_ItemCount);
                 _aitemType = aitemBox.AucitionAitemType(_ItemCount);
+                _ItemRate = 100;
 
                 for (cpuCount = 0; cpuCount != CPUs.Count; cpuCount++)
                 {
@@ -144,7 +145,5 @@ public class MoneyPlus : MonoBehaviour
             succcesfulBid.GetComponent<SucccesfulBid>().Succes();
             _ItemCount += 1;
             AuctionStart = true;
-        
-        
     }
 }
