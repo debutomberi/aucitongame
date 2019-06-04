@@ -14,9 +14,7 @@ public class SucccesfulBid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _moneyPlus = GetComponent<MoneyPlus>();
-        _itemRate = _moneyPlus._ItemRate;
-        cpuMoney = _moneyPlus._cpuMoney;
+
     }
 
     // Update is called once per frame
@@ -26,9 +24,7 @@ public class SucccesfulBid : MonoBehaviour
     }
 
     //落札成功
-    public void Succes()
-    {
-        cpuMoney -= _itemRate;
-        sales += _itemRate;
+    public void Succes() { 
+
     }
 }
