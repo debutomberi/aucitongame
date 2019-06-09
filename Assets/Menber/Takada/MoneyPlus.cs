@@ -12,19 +12,20 @@ public class MoneyPlus : MonoBehaviour
     public GameObject[] CPUs = new GameObject[4]; //CPUを入れる配列
     int UpMoney; // 上乗せする金額
     int UppedMoney; //どれだけ上がったか
-    int[] UpperLimit = new int[4]; // 上乗せできる表向きの合計金額上限
+    int[] UpperLimit; // 上乗せできる表向きの合計金額上限
     int OneUpLimit = 10; //一度に上乗せできる金額の上限 
 
     bool AuctionStart = true; //オークション開始のフラグ
-    bool plusFlag　= true;    //CPUが競りに参加しているかのフラグ
+    bool plusFlag;    //CPUが競りに参加しているかのフラグ
 
-    public int[] _cpuMoney = new int[4]; //CPUの所持金
+    public int[] _cpuMoney; //CPUの所持金
+    GameObject bidder;      //落札者
 
     [SerializeField]
     private float Intaval;　　//どれだけ遅延させるか
     private float tmpTime = 0;
 
-    public string[] _UserName = new string [4];
+    public string[] _UserName;
     public int _ItemRate;     //商品の初期金額
     AitemType _aitemType;     //商品の部類
     AitemType cpuFavorite;　　//お気に入りの商品
@@ -35,6 +36,9 @@ public class MoneyPlus : MonoBehaviour
 
     private void Start()
     {
+        UpperLimit = new int[4];
+        _cpuMoney = new int[4];
+        _UserName = new string[4];
 
     }
 
@@ -47,11 +51,12 @@ public class MoneyPlus : MonoBehaviour
             //競り開始時の商品の値段とアイテムタイプとユーザーの加算上限額を設定
             if (AuctionStart)
             {
+                plusFlag = true;
+
                 _ItemRate = AitemBox.Instance.AuctionStartprice(_ItemCount);
                 _aitemType = AitemBox.Instance.AucitionAitemType(_ItemCount);
                 
-
-                for (int i = 0; i != CPUs.Length; i++)
+                for (int i = 0; i < CPUs.Length; i++)
                 {
                     _cpuMoney[i] = UserBox.Instance.UserMoneyCheck(i);
                     _UserName[i] = UserBox.Instance.UserNameCheck(i);
@@ -60,7 +65,7 @@ public class MoneyPlus : MonoBehaviour
                     {
                         UpperLimit = _cpuMoney;
                     }
-                    Debug.Log(_UserName + "の限界は" + UpperLimit);
+                    Debug.Log(_UserName[i] + "の限界は" + UpperLimit[i]);
                 }
 
                 AuctionStart = false;
@@ -92,7 +97,7 @@ public class MoneyPlus : MonoBehaviour
             cpuFavorite = UserBox.Instance.UserLikeCheck(i);
 
             // 金額上限でなければ上乗せする
-            if (plusFlag)
+            if (plusFlag == true)
             {
                 if (UppedMoney <= UpperLimit[i])
                 {
@@ -103,7 +108,7 @@ public class MoneyPlus : MonoBehaviour
 
                     Debug.Log(UppedMoney);
                     Debug.Log("現在の値段は" + _ItemRate + "円です");
-                    Debug.Log(_UserName + "が掛け金を上乗せしました");
+                    Debug.Log(_UserName[i] + "が掛け金を上乗せしました");
 
                 }
 
@@ -113,7 +118,7 @@ public class MoneyPlus : MonoBehaviour
                 {
                     //好きな部類の商品なら上限を加算
                     UpperLimit[i] += 2000;
-                    Debug.Log(_UserName + "の好きな部類の商品です");
+                    Debug.Log(_UserName[i] + "の好きな部類の商品です");
 
                 }
                 else
@@ -126,12 +131,13 @@ public class MoneyPlus : MonoBehaviour
         
             //1人以外全員加算できなくなっていたら落札
 
-            for (int i = 0; i != CPUs.Length; i++)
+            for (int i = 0; i < CPUs.Length; i++)
             {
                 if (!CPUs[i]) { return; }
+                bidder = CPUs[i];
             }
 
-            Debug.Log(_UserName + "さんが商品を落札しました。");
+            Debug.Log(bidder + "さんが商品を落札しました。");
             //succcesfulBid.GetComponent<SucccesfulBid>().Succes();
             _ItemCount += 1;
             AuctionStart = true;
