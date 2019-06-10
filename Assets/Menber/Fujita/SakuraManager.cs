@@ -73,7 +73,7 @@ public class SakuraManager : MonoBehaviour
         //count(入札金額の表示)
         Count.text = "入札する金額\n" + count + "円";
         //PlayerCount(プレイヤーの宣言)
-        PlayerCount.text = count + "";
+        PlayerCount.text = moneyPlus._ItemRate + count + "";
         //bidcount(合計金額の表示)
         BidCount.text = "現在の金額" + moneyPlus._ItemRate + "円";
     }

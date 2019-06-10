@@ -225,7 +225,6 @@ MonoBehaviour:
   AI2: {fileID: 940484021}
   AI3: {fileID: 1229076708}
   AI4: {fileID: 546551475}
-  Timecount: 5
   count: 0
   moneyPlus: {fileID: 52626985}
 --- !u!4 &52626984
@@ -942,7 +941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "AI\uFF12\u5165\u672D"
+  m_Text: "AI1\u5165\u672D"
 --- !u!222 &596640644
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1369,7 +1368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "AI1\u5165\u672D"
+  m_Text: "AI2\u5165\u672D"
 --- !u!222 &940484022
 CanvasRenderer:
   m_ObjectHideFlags: 0
