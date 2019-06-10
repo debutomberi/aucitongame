@@ -489,8 +489,9 @@ MonoBehaviour:
   - {fileID: 1773288298}
   - {fileID: 2077180358}
   - {fileID: 1762689814}
-  _cpuMoney: 0
-  Intaval: 3
+  _cpuMoney: 
+  Intaval: 10
+  _UserName: []
   _ItemRate: 0
 --- !u!4 &584042443
 Transform:

@@ -19,7 +19,7 @@ public class MoneyPlus : MonoBehaviour
     bool plusFlag;    //CPUが競りに参加しているかのフラグ
 
     public int[] _cpuMoney; //CPUの所持金
-    GameObject bidder;      //落札者
+    string bidder;      //落札者
 
     [SerializeField]
     private float Intaval;　　//どれだけ遅延させるか
@@ -101,10 +101,9 @@ public class MoneyPlus : MonoBehaviour
             {
                 if (UppedMoney <= UpperLimit[i])
                 {
-                    UpMoney = 10 * Random.Range(1, OneUpLimit + 1);
+                    UpMoney = Random.Range(1,11) * Random.Range(1, OneUpLimit + 1);
                     UppedMoney += UpMoney;
                     _ItemRate = _ItemRate + UppedMoney;
-                    //ここで誰が上げたか判定
 
                     Debug.Log(UppedMoney);
                     Debug.Log("現在の値段は" + _ItemRate + "円です");
@@ -131,16 +130,17 @@ public class MoneyPlus : MonoBehaviour
         
             //1人以外全員加算できなくなっていたら落札
 
-            for (int i = 0; i < CPUs.Length; i++)
-            {
-                if (!CPUs[i]) { return; }
-                bidder = CPUs[i];
-            }
+        for (int i = 0; i < CPUs.Length; i++)
+        {
+            if (!CPUs[i]) { return; }
+            bidder = _UserName[i];          　
+        }
 
             Debug.Log(bidder + "さんが商品を落札しました。");
-            //succcesfulBid.GetComponent<SucccesfulBid>().Succes();
+            
             _ItemCount += 1;
             AuctionStart = true;
         
     }
 }
+
