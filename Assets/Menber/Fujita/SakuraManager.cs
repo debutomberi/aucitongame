@@ -16,6 +16,11 @@ public class SakuraManager : MonoBehaviour
     public Text AI4;
     public int count;
     //public float Timecount = 5;
+    public GameObject  BidButton;
+    public GameObject  UpButton;
+    public GameObject  DownButton;
+    public GameObject  CountText;
+    public GameObject  Player;
 
     public MoneyPlus moneyPlus;
     //public int SakuraMoney;
@@ -24,7 +29,9 @@ public class SakuraManager : MonoBehaviour
     void Start()
     {
         //bidcount = 0;
-        moneyPlus = GetComponent<MoneyPlus>();
+       
+       // moneyPlus = GetComponent<MoneyPlus>();
+        Player.SetActive(false);
         UpdateLabel();
     }
 
@@ -59,6 +66,12 @@ public class SakuraManager : MonoBehaviour
     {
         //bidcount = bidcount + count;
         moneyPlus._ItemRate = moneyPlus._ItemRate + count;
+        Player.SetActive(true);
+        BidButton.SetActive(false);
+        UpButton.SetActive(false);
+        DownButton.SetActive(false);
+        CountText.SetActive(false);
+        StartCoroutine(Coroutine());
 
 
         //if (count >= 0 || Timecount == 0)
@@ -73,8 +86,18 @@ public class SakuraManager : MonoBehaviour
         //count(入札金額の表示)
         Count.text = "入札する金額\n" + count + "円";
         //PlayerCount(プレイヤーの宣言)
-        PlayerCount.text = moneyPlus._ItemRate + count + "";
+        PlayerCount.text = moneyPlus._ItemRate + "";
         //bidcount(合計金額の表示)
         BidCount.text = "現在の金額" + moneyPlus._ItemRate + "円";
+    }
+
+    public IEnumerator Coroutine()
+    {
+        yield return new WaitForSeconds(1);
+        Player.SetActive(false);
+        BidButton.SetActive(true);
+        UpButton.SetActive(true);
+        DownButton.SetActive(true);
+        CountText.SetActive(true);
     }
 }
