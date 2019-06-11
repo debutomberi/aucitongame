@@ -7,7 +7,7 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
 
     public int money = 10000;
 
-    Aitem[] aitems = new Aitem[4];
+    [SerializeField]Aitem[] aitems = new Aitem[4];
     [HideInInspector]
     public int nextAitem = 0;
     
@@ -37,10 +37,11 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
         nextAitem = 0;
     }
 
-    public bool AucitonStart() {
-        if(aitems[0] == null) { return false; }
+    public bool AucitonStart(int i) {
+        if (aitems[i] == null) { return false; }
         else { return true; }
     }
+    
 
     //アイテムの値段
     public int AuctionStartprice(int auctionNumber)

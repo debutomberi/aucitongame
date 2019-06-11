@@ -483,14 +483,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1796541efbb5d684eb8a4fc837cbac07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  succcesfulBid: {fileID: 584042446}
+  aitemBox: {fileID: 6627664854403516895, guid: 4127ca3049e9d9f46887644b0fcc3eaf,
+    type: 3}
   CPUs:
   - {fileID: 832881748}
   - {fileID: 1773288298}
   - {fileID: 2077180358}
   - {fileID: 1762689814}
   _cpuMoney: 
-  Intaval: 10
+  Intaval: 0.1
   _UserName: []
   _ItemRate: 0
 --- !u!4 &584042443
