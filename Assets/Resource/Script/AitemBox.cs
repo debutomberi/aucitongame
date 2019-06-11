@@ -58,6 +58,7 @@ public class AitemBox : SingletonMonoBehaviour<AitemBox>
     //アイテムの名前
     public string AutionAitemName(int auctionNumber)
     {
+        if (aitems[auctionNumber] == null) { return "未購入"; }
         return aitems[auctionNumber].aitemName;
     }
 

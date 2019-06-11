@@ -21,6 +21,15 @@ public class UIManager : MonoBehaviour{
     private Text customer4;
 
     [SerializeField]
+    private Text Scustomer1;
+    [SerializeField]
+    private Text Scustomer2;
+    [SerializeField]
+    private Text Scustomer3;
+    [SerializeField]
+    private Text Scustomer4;
+
+    [SerializeField]
     private Text researchButton1;
     [SerializeField]
     private Text researchButton2;
@@ -31,15 +40,15 @@ public class UIManager : MonoBehaviour{
 
 
     [SerializeField]
-    private GameObject myMoney;
+    private Text myMoney;
     [SerializeField]
-    private GameObject product1;
+    private Text product1;
     [SerializeField]
-    private GameObject product2;
+    private Text product2;
     [SerializeField]
-    private GameObject product3;
+    private Text product3;
     [SerializeField]
-    private GameObject product4;
+    private Text product4;
 
 
     private bool researchCustomer1 = false;
@@ -50,8 +59,14 @@ public class UIManager : MonoBehaviour{
 
 
     
-    string customerName1 = "まれいたそ";
-    string customerLike1 = "水素水";
+    string customerName1 ;
+    string customerName2 ;
+    string customerName3 ;
+    string customerName4 ;
+    string customerLike1 ;
+    string customerLike2 ;
+    string customerLike3 ;
+    string customerLike4 ;
     
 
     int product = 100;
@@ -60,6 +75,7 @@ public class UIManager : MonoBehaviour{
         statusWindow.SetActive(false);
         researchWindow.SetActive(false);
         ChangeText();
+        
     }
 
     ////ボタンでscene移動　※移動先のsceneは未制作※
@@ -116,40 +132,45 @@ public class UIManager : MonoBehaviour{
 
 
     public void OnClickResearButton1(){
-
+        if (AitemBox.Instance.money < 500) { return; }
         if (researchCustomer1 == false){
             researchCustomer1 = true;
             
             //所持金を減らす
-            AitemBox.Instance.money = -500;
-
+            AitemBox.Instance.money -= 500;
+            Scustomer1.text = UserBox.Instance.UserNameCheck(0) + "は" + UserBox.Instance.UserLikeCheck(0) + "が好きだ";
             researchButton1.text = "調査済み";
+            ChangeText();
+
         }
         
     }
 
     public void OnClickResearButton2(){
-
+        if (AitemBox.Instance.money < 500) { return; }
         if (researchCustomer2 == false){
             researchCustomer2 = true;
 
             //所持金を減らす
-            AitemBox.Instance.money = -500;
-
+            AitemBox.Instance.money -= 500;
+            Scustomer2.text = UserBox.Instance.UserNameCheck(1) + "は" + UserBox.Instance.UserLikeCheck(1) + "が好きだ";
             researchButton2.text = "調査済み";
+            ChangeText();
         }
 
     }
 
     public void OnClickResearButton3(){
-
+        if (AitemBox.Instance.money < 500) { return; }
         if (researchCustomer3 == false){
             researchCustomer3 = true;
             
             //所持金を減らす
-            AitemBox.Instance.money = -500;
+            AitemBox.Instance.money -= 500;
+            Scustomer3.text = UserBox.Instance.UserNameCheck(2) + "は" + UserBox.Instance.UserLikeCheck(2) + "が好きだ";
 
             researchButton3.text = "調査済み";
+            ChangeText();
         }
 
     }
@@ -160,9 +181,10 @@ public class UIManager : MonoBehaviour{
             researchCustomer4 = true;
             
             //所持金を減らす
-            AitemBox.Instance.money = -500;
-
+            AitemBox.Instance.money -= 500;
+            Scustomer4.text = UserBox.Instance.UserNameCheck(3) + "は" + UserBox.Instance.UserLikeCheck(3) + "が好きだ";
             researchButton4.text = "調査済み";
+            ChangeText();
         }
 
     }
@@ -178,11 +200,17 @@ public class UIManager : MonoBehaviour{
         //Text customer3_Text = customer3.GetComponent<Text>();
         //Text customer4_Text = customer4.GetComponent<Text>();
 
-        Text myMoney_Text = myMoney.GetComponent<Text>();
+        myMoney.text = "所持金："+AitemBox.Instance.money;
 
-        //myMoney_Text = 
+        //myMoney_Text = AitemBox.Instance.money;
+        product1.text = AitemBox.Instance.AutionAitemName(0);
+        product2.text = AitemBox.Instance.AutionAitemName(1);
+        product3.text = AitemBox.Instance.AutionAitemName(2);
+        product4.text = AitemBox.Instance.AutionAitemName(3);
         //product1.text = customerLike1 + "(" + product + "円)";
-        customer1.text = customerName1 + "は" + customerLike1 + "が好きだ";
+        customer1.text = UserBox.Instance.UserNameCheck(0);
+        customer2.text = UserBox.Instance.UserNameCheck(1);
+        customer3.text = UserBox.Instance.UserNameCheck(2);
+        customer4.text = UserBox.Instance.UserNameCheck(3);
     }
-
-}
+    }

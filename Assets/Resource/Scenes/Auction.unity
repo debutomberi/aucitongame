@@ -644,7 +644,7 @@ MonoBehaviour:
   - {fileID: 1762689814}
   additionFlag: 
   _cpuMoney: 
-  Intaval: 2
+  Intaval: 0.5
   _UserName: []
   _ItemRate: 0
   count: 0
